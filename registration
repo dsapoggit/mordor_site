@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html>
+<style>
+	.form-wrap{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: #333366;
+	}
+</style>
 <head>
     <meta charset="utf-8" />
 </head>
 <body>
-<a href="main.html"> Main page</a>
 <div class="form-wrap">
+	<a href="main.html"> Main page</a>
+
 	<div class="profile"><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
 		<h1>Add resume</h1>
 	</div>
