@@ -152,15 +152,22 @@ img {
 	</center>
 	<script>
 		function testFunction() {			
-			let man = {
-				name: document.getElementById('name').value,
-				surname: document.getElementById('surname').value,
-				email: document.getElementById('email').value,
-				education: document.getElementById('education').value,
-				courses: document.getElementById('courses').value,
-				specialisation: document.getElementById('spec').value
-			};
-			alert(JSON.stringify(man));
+			var xhr = new XMLHttpRequest();
+			const url = "https://sweepstakes-mordor.herokuapp.com/mordor/candidates/";
+			xhr.open('GET', url);
+			//xhr.send(document.getElementById('spec').value);
+			//var json_file = JSON.parse(xhr.responseText);
+			var temp = ["Masha Ivanova", "Vasya Pupkin", "Tima"];
+			var json_file = JSON.stringify(temp);
+			var new_line = JSON.parse(json_file);
+			var txt = "";
+			txt += "<table border = '1'>";
+			for (x in new_line) {
+				txt += "<tr><td>" + new_line[x] + "</td></tr>";
+			}
+			txt += "</table>";
+			document.getElementById("demo").innerHTML = txt;
+		
 		}
 	</script>
 </div>
