@@ -1,0 +1,83 @@
+<html>
+<style>
+	.form-wrap{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	color: #333366;
+	}
+</style>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<div class="form-wrap">
+	<a href="main.html"> Main page</a>
+
+	<div class="profile"><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
+		<h1>Add resume</h1>
+	</div>
+    <fieldset>
+		<div>
+			<p><b> First Name</b>
+			<input type="text", name="name", id = "name" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Last name</b>
+			<input type="text", name="lname", id = "surname" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>E-mail</b>
+			<input type="email", name="email", id = "email", required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Specialisation</b>
+			<select name="spec" id = "spec">
+				<option>Choose your specialisation</option>
+				<option value="Povar">Povar</option> 
+				<option value="Milicioner">Milicioner</option> 
+				<option value="Programmist">Programmist</option> 
+			</select> 
+			</p>
+			<div class="select-arrow">
+			</div> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<p><b>Education</b><Br>
+			<input type="text" id = "education">
+		</p>
+	</fieldset>
+	<fieldset>
+		<p><b>Job experience</b><Br>
+			<input type="text" id = "je">
+		</p>
+	</fieldset>
+	<fieldset>
+		<p><b>Courses</b><Br>
+			<input type="text", id = "courses">
+		</p>
+	</fieldset>
+	<input type="button" value="Submit"  onclick="testFunction()">
+	<script>
+		function testFunction() {			
+			let man = {
+				candidate_name: document.getElementById('name').value + " " + document.getElementById('surname').value + " " + document.getElementById('email').value,
+				summaries: document.getElementById('education').value + ", " + document.getElementById('spec').value + ", " + document.getElementById('je').value,
+				certificates: document.getElementById('courses').value,
+				candidate_rate: '0',
+			};
+			alert(JSON.stringify(man));
+		}
+	</script>
+</div>
+
+</body>
+</html>
