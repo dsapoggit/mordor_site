@@ -65,13 +65,18 @@
 			<input type="text", id = "courses">
 		</p>
 	</fieldset>
+	<fieldset>
+		<p><b>Motivation</b><Br>
+			<input type="text", id = "mt">
+		</p>
+	</fieldset>
 	<input type="button" value="Submit"  onclick="testFunction()">
 	<script>
 		function testFunction() {			
 			let man = {
 				candidate_name: document.getElementById('name').value + " " + document.getElementById('surname').value + " " + document.getElementById('email').value,
-				summaries: document.getElementById('education').value + ", " + document.getElementById('spec').value + ", " + document.getElementById('je').value,
-				certificates: document.getElementById('courses').value,
+				summaries: document.getElementById('mt').value + ", " + document.getElementById('spec').value + ", " + document.getElementById('je').value,
+				certificates: document.getElementById('courses').value + ", " + document.getElementById('education').value,
 				candidate_rate: '0',
 			};
 			alert(JSON.stringify(man));
