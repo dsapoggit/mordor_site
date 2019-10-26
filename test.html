@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<style>
+	.form-wrap {
+  width: 550px;
+  background: #faf6d4;
+  border-radius: 20px;
+}
+body {
+  background: #faf6d4;
+}
+.form-wrap *{transition: .1s linear}
+.profile {
+  width: 240px;
+  float: left;
+  text-align: center;
+  padding: 30px;
+}
+form {
+  background: blue;
+  float: left;
+  width: calc(100% - 240px);
+  padding: 30px;
+  border-radius: 0 20px 20px 0;
+  color: #7b7b7b; 
+}
+.form-wrap:after, form div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+form div {
+  margin-bottom: 15px;
+  position: relative;
+}
+h1 {
+  font-size: 24px;
+  %font-weight: 400;
+  position: relative;
+  margin-top: 50px;
+}
+h1:after {
+  content: "\f138";
+  font-size: 40px;
+  font-family: FontAwesome;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/********************** стилизация элементов формы **********************/
+label, span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+input[type="text"], input[type="email"] {
+  border-width: 0;
+  outline: none;
+  margin: 0;
+  width: 100%;
+  padding: 10px 15px;
+  background: #e6e6e6;
+}
+input[type="text"]:focus, input[type="email"]:focus {
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+.radio label {
+  position: relative;
+  padding-left: 50px;
+  cursor: pointer;
+  width: 50%;
+  float: left;
+  line-height: 40px;
+}
+.radio input {
+  position: absolute;  
+  opacity: 0;
+}
+.radio-control {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background: #e6e6e6;
+  border-radius: 50%;
+  text-align: center;
+}
+.male:before {
+  content: "\f222";
+  font-family: FontAwesome;
+  font-weight: bold;
+}
+.female:before {
+  content: "\f221";
+  font-family: FontAwesome;
+  font-weight: bold;
+}
+.radio label:hover input ~ .radio-control,
+.radiol input:focus ~ .radio-control {
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.2);
+}
+.radio input:checked ~ .radio-control {
+  color: red;
+}
+select {
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 0;
+  background: #e6e6e6;
+  color: #7b7b7b;
+  -webkit-appearance: none; /*убираем галочку в webkit-браузерах*/
+  -moz-appearance: none; /*убираем галочку в Mozilla Firefox*/
+}
+select::-ms-expand {
+  display: none; /*убираем галочку в IE*/
+}
+.select-arrow {
+  position: absolute;
+  top: 38px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none; /*активизируем показ списка при нажатии на стрелку*/
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: #7b7b7b transparent transparent transparent;
+}
+button {
+  padding: 10px 0;
+  border-width: 0;
+  display: block;
+  width: 120px;
+  margin: 25px auto 0;
+  background: #60e6c5;
+  color: blue;
+  font-size: 14px;
+  outline: none;
+  text-transform: uppercase;
+}
+
+/********************** добавляем форме адаптивность **********************/
+@media (max-width: 600px) {
+  .form-wrap {margin: 20px auto; max-width: 550px; width:100%;}
+  .profile, form {float: none; width: 100%;}
+  h1 {margin-top: auto; padding-bottom: 50px;}
+  form {border-radius: 0 0 20px 20px;}
+}
+</style>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<div class="form-wrap">
+	<a href="main.html"> Main page</a>
+
+	<div><center><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
+		<h1>Add resume</h1>
+	</center></div>
+<fieldset>
+		<div>
+			<p><b> First Name</b>
+			<input type="text", name="name", id = "name" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Last name</b>
+			<input type="text", name="lname", id = "surname" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>E-mail</b>
+			<input type="email", name="email", id = "email", required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Specialisation</b>
+			<select name="spec" id = "spec">
+				<option>Choose your specialisation</option>
+				<option value="Povar">Povar</option> 
+				<option value="Milicioner">Milicioner</option> 
+				<option value="Programmist">Programmist</option> 
+			</select> 
+			</p>
+			<div class="select-arrow">
+			</div> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<p><b>Education</b><Br>
+			<input type="text" id = "education">
+		</p>
+	</fieldset>
+	<fieldset>
+		<p><b>Courses</b><Br>
+			<input type="text", id = "courses">
+		</p>
+	</fieldset>
+	<input type="button" value="Submit"  onclick="testFunction()">
+	<script>
+		function testFunction() {			
+			let man = {
+				name: document.getElementById('name').value,
+				surname: document.getElementById('surname').value,
+				email: document.getElementById('email').value,
+				education: document.getElementById('education').value,
+				courses: document.getElementById('courses').value,
+				specialisation: document.getElementById('spec').value
+			};
+			alert(JSON.stringify(man));
+		}
+	</script>
+</div>
+
+</body>
+</html>
