@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+<a href="main.html"> Main page</a>
+<div class="form-wrap">
+  <div class="profile"><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
+    <h1>Add resume</h1>
+  </div>
+  <form method="post" action="form.php">
+    <fieldset>
+<div>
+      <label for="name">First Name</label>
+      <input type="text" name="name" required>
+    </div>
+</fieldset>
+<fieldset>
+<div>
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" required>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+      <label for="email">E-mail</label>
+      <input type="email" name="email" required>
+    </div>
+</fieldset>
+<fieldset>
+    <div>
+      <label for="speciality">Speciality</label>
+      <select name="country">
+        <option>Choose your specialisation</option>
+        <option value="Povar">Povar</option> 
+        <option value="Milicioner">Milicioner</option> 
+        <option value="Programmist">Programmist</option> 
+      </select> 
+      <div class="select-arrow"></div> 
+    </div>
+</fieldset>
+<fieldset>
+<p><b>Education</b><Br>
+   <textarea name="comment" cols="40" rows="5"></textarea></p>
+</fieldset>
+<fieldset>
+<p><b>Courses</b><Br>
+   <textarea name="comment" cols="40" rows="5"></textarea></p>
+</fieldset>
+    <button type="submit">Submit</button> 
+  </form> 
+</div>
+
+</body>
+</html>
