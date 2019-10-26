@@ -6,50 +6,68 @@
 <body>
 <a href="main.html"> Main page</a>
 <div class="form-wrap">
-  <div class="profile"><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
-    <h1>Add resume</h1>
-  </div>
-  <form method="post" action="form.php">
+	<div class="profile"><img src="https://vignette.wikia.nocookie.net/smesharikiarhives/images/3/3e/%D0%91%D0%B0%D1%80%D0%B0%D1%88_%D0%A2%D0%97.png/revision/latest?cb=20190530172227&path-prefix=ru" width="20%"/>
+		<h1>Add resume</h1>
+	</div>
     <fieldset>
-<div>
-      <label for="name">First Name</label>
-      <input type="text" name="name" required>
-    </div>
-</fieldset>
-<fieldset>
-<div>
-      <label for="lname">Last Name</label>
-      <input type="text" name="lname" required>
-    </div>
-</fieldset>
-<fieldset>
-    <div>
-      <label for="email">E-mail</label>
-      <input type="email" name="email" required>
-    </div>
-</fieldset>
-<fieldset>
-    <div>
-      <label for="speciality">Speciality</label>
-      <select name="country">
-        <option>Choose your specialisation</option>
-        <option value="Povar">Povar</option> 
-        <option value="Milicioner">Milicioner</option> 
-        <option value="Programmist">Programmist</option> 
-      </select> 
-      <div class="select-arrow"></div> 
-    </div>
-</fieldset>
-<fieldset>
-<p><b>Education</b><Br>
-   <textarea name="comment" cols="40" rows="5"></textarea></p>
-</fieldset>
-<fieldset>
-<p><b>Courses</b><Br>
-   <textarea name="comment" cols="40" rows="5"></textarea></p>
-</fieldset>
-    <button type="submit">Submit</button> 
-  </form> 
+		<div>
+			<p><b> First Name</b>
+			<input type="text", name="name", id = "name" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Last name</b>
+			<input type="text", name="lname", id = "surname" required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>E-mail</b>
+			<input type="email", name="email", id = "email", required>
+			</p>
+		</div>
+	</fieldset>
+	<fieldset>
+		<div>
+			<p><b>Specialisation</b>
+			<select name="spec" id = "spec">
+				<option>Choose your specialisation</option>
+				<option value="Povar">Povar</option> 
+				<option value="Milicioner">Milicioner</option> 
+				<option value="Programmist">Programmist</option> 
+			</select> 
+			</p>
+			<div class="select-arrow">
+			</div> 
+		</div>
+	</fieldset>
+	<fieldset>
+		<p><b>Education</b><Br>
+			<input type="text" id = "education">
+		</p>
+	</fieldset>
+	<fieldset>
+		<p><b>Courses</b><Br>
+			<input type="text", id = "courses">
+		</p>
+	</fieldset>
+	<input type="button" value="Submit"  onclick="testFunction()">
+	<script>
+		function testFunction() {			
+			let man = {
+				name: document.getElementById('name').value,
+				surname: document.getElementById('surname').value,
+				email: document.getElementById('email').value,
+				education: document.getElementById('education').value,
+				courses: document.getElementById('courses').value,
+				specialisation: document.getElementById('spec').value
+			};
+			alert(JSON.stringify(man));
+		}
+	</script>
 </div>
 
 </body>
