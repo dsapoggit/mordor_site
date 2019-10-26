@@ -65,6 +65,11 @@
 				certificates: document.getElementById('courses').value + ", " + document.getElementById('education').value,
 				candidate_rate: '0',
 			};
+			var xhr = new XMLHttpRequest();
+			const url = "http://127.0.0.1:8000/mordor/vacancies ";
+			xhr.open('POST', url)
+			// уточнить url
+			xhr.send(JSON.stringify(man))
 			alert(JSON.stringify(man));
 		}
 	</script>
