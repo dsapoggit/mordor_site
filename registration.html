@@ -37,20 +37,6 @@
 		</div>
 	</fieldset>
 	<fieldset>
-		<div>
-			<p><b>Specialisation</b>
-			<select name="spec" id = "spec">
-				<option>Choose your specialisation</option>
-				<option value="Povar">Povar</option> 
-				<option value="Milicioner">Milicioner</option> 
-				<option value="Programmist">Programmist</option> 
-			</select> 
-			</p>
-			<div class="select-arrow">
-			</div> 
-		</div>
-	</fieldset>
-	<fieldset>
 		<p><b>Education</b><Br>
 			<input type="text" id = "education">
 		</p>
@@ -75,7 +61,7 @@
 		function testFunction() {			
 			let man = {
 				candidate_name: document.getElementById('name').value + " " + document.getElementById('surname').value + " " + document.getElementById('email').value,
-				summaries: document.getElementById('mt').value + ", " + document.getElementById('spec').value + ", " + document.getElementById('je').value,
+				summaries: document.getElementById('mt').value + ", "  + document.getElementById('je').value,
 				certificates: document.getElementById('courses').value + ", " + document.getElementById('education').value,
 				candidate_rate: '0',
 			};
